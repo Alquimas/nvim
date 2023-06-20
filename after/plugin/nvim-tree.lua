@@ -60,7 +60,7 @@ local function my_on_attach(bufnr)
                     ignored = "◌",
                 },
             },
-        } 
+        }
     },
     --Quero arquivos ocultos ocultados por padrão, H mostra eles
     filters = {
