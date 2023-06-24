@@ -9,6 +9,12 @@ vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
+-- Compilando Haskell 
+vim.keymap.set("n", "<leader>hs", ":w | !file=$(basename % .hs) && gnome-terminal --window -- bash -c \"ghc -outputdir ~/Programacao/Haskell/out -o ~/Programacao/Haskell/out/$file % && cd ~/Programacao/Haskell/out && ./$file; read -p \"Aperte_ENTER_para_continuar...\"\"<CR><CR>")
+
+--Novo terminal
+vim.keymap.set("n", "<leader>nn", ":w | !gnome-terminal --window<CR><CR>")
+
 --simplificando pra mover entre janelas
 vim.keymap.set("n", "<C-h>", "<C-w>h")
 vim.keymap.set("n", "<C-l>", "<C-w>l")
