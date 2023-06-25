@@ -22,5 +22,3 @@ M.find_files = function()
 end
 --pesquisa padrão
 vim.keymap.set('n', '<leader>ff', M.find_files, {})
---pesquisa em pastas git
---vim.keymap.set('n', '<C-p>', builtin.git_files, {})

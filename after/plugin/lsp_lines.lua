@@ -4,9 +4,9 @@ require("lsp_lines").setup()
 vim.diagnostic.config({
     virtual_text = false,
 })
--- espaço l em qualquer modo desativa as linhas do lsp
+-- espaço l desativa as linhas do lsp
 vim.keymap.set(
-    "",
+    "n",
     "<leader>l",
     require("lsp_lines").toggle,
     { desc = "Toggle lsp_lines" }

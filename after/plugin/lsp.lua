@@ -4,6 +4,16 @@ lsp.on_attach(function(client, bufnr)
     lsp.default_keymaps({buffer = bufnr})
 end)
 
+-- Muda os ícones que aparecem do lado esquerdo dos números relativo aos avisos
+-- do lsp. Recomendo mudar porquê o padrão são apenas letras e podem ser bem 
+-- confusos
+lsp.set_sign_icons({
+    error = '✖',
+    warn = '⚠',
+    hint = '⚑',
+    info = '»'
+})
+
 -- Precisam ser instalados por fora ou usando o :Mason
 -- O de rust aparentemente só funciona em projetos buildados com o cargo
 -- Nao falamos sobre o de Haskell
@@ -15,6 +25,8 @@ require'lspconfig'.hls.setup{}
 
 lsp.setup()
 
+--o cmp que cuida do autocomplete, então qualquer coisa relativa a isso é 
+--configurada aqui
 local cmp = require('cmp')
 
 cmp.setup({

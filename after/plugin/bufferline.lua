@@ -8,7 +8,7 @@ require("bufferline").setup{
                 filetype = "neo-tree",
                 text = "Arquivos",
                 text_align = "center",
-                separator = true, -- set to `true` if clear background of neo-tree
+                separator = true,
             },
             {
                 filetype = "NvimTree",
