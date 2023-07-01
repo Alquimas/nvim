@@ -31,8 +31,8 @@ local cmp = require('cmp')
 
 cmp.setup({
     mapping = {
-        --faz o enter selecionar a opção do autocomplete
-        ['<CR>'] = cmp.mapping.confirm({select = false}),
+        --faz o tab selecionar a opção do autocomplete
+        ['<TAB>'] = cmp.mapping.confirm({select = false}),
         --se o autocomplete tá desativado, força a lista de complete
         --caso contrario, deixa desativado
         --['<C-a>'] = cmp.mapping.complete(),

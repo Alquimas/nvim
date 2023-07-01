@@ -81,4 +81,4 @@ end
     --Ativa ou Desativa a tree
     vim.keymap.set('n', '<leader>x', vim.cmd.NvimTreeToggle)
     --Me joga pro arquivo que tá sendo editado
-    vim.keymap.set('n', '<leader>s', vim.cmd.NvimTreeFindFile)
+    --vim.keymap.set('n', '<leader>s', vim.cmd.NvimTreeFindFile)
