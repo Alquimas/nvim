@@ -1,6 +1,4 @@
-local telescope = require 'telescope'
 local telescope_builtin = require 'telescope.builtin'
-local telescope_actions = require 'telescope.actions'
 local M = {}
 --muda o posicionamento e desabilida o preview 
 require('telescope').setup {

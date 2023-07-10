@@ -16,6 +16,18 @@ require("bufferline").setup{
                 text_align = "center",
                 separator = true,
             },
+            {
+                filetype = "undotree",
+                text = "UndoTree",
+                text_align = "center",
+                separator = true,
+            },
+            {
+                filetype = "diff",
+                text = "Diff",
+                text_align = "center",
+                separator = true,
+            }
         },
     }
 }

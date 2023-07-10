@@ -51,10 +51,10 @@ vim.opt.termguicolors = true
 -- deixa o lualine mostrar o modo
 vim.opt.showmode = false
 
---sempre mostra as 10 primeiras/ultimas linhas, exceto se for começo/fim do
+--sempre mostra as 15 primeiras/ultimas linhas, exceto se for começo/fim do
 --documento
-vim.opt.scrolloff = 10
-vim.opt.sidescrolloff = 10
+vim.opt.scrolloff = 15
+vim.opt.sidescrolloff = 15
 
 --máximo de 80 caracteres por linha, se ultrapassar automaticamente dá enter no
 --ultimo espaço
