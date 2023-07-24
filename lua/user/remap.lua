@@ -10,9 +10,10 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz")
 vim.keymap.set("n", "<C-u>", "<C-u>zz")
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
+vim.keymap.set("n", "<leader>d", "\"_d")
 
 -- Compilando
-vim.keymap.set("n", "<leader>cc", ":w | make run SOURCE_FILE=%<CR>")
+vim.keymap.set("n", "<leader>cc", ":w | make compile SOURCE_FILE=%<CR>")
 vim.keymap.set("n", "<leader>cl", ":w | make clean SOURCE_FILE=%<CR>")
 
 --Novo terminal
@@ -31,9 +32,9 @@ vim.keymap.set("n", "<leader>s",
 --Ativa/Desativa os números relativos
 function Toggle_relative_number()
     if vim.wo.relativenumber == true then
-        vim.wo.relativenumber = false
+       vim.wo.relativenumber = false
     else
-        vim.wo.relativenumber = true
+       vim.wo.relativenumber = true
     end
 end
 vim.cmd([[command! ToggleRelNum lua Toggle_relative_number()]])

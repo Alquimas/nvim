@@ -22,6 +22,8 @@ require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.clangd.setup{}
 require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.hls.setup{}
+require'lspconfig'.ltex.setup{}
+require'lspconfig'.texlab.setup{}
 
 lsp.setup()
 
