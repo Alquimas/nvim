@@ -9,9 +9,9 @@ end)
 -- confusos
 lsp.set_sign_icons({
     error = '✖',
-    warn = '⚠',
-    hint = '⚑',
-    info = '»'
+    warn = '',
+    hint = '',
+    info = ''
 })
 
 -- Precisam ser instalados por fora ou usando o :Mason
