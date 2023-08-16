@@ -24,6 +24,7 @@ require'lspconfig'.lua_ls.setup{}
 require'lspconfig'.hls.setup{}
 require'lspconfig'.ltex.setup{}
 require'lspconfig'.texlab.setup{}
+require'lspconfig'.jdtls.setup{}
 
 lsp.setup()
 
