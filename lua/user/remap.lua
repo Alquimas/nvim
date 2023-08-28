@@ -16,8 +16,9 @@ vim.keymap.set("n", "<leader>d", "\"_d")
 vim.keymap.set("n", "<leader>cc", ":w | make compile SOURCE_FILE=%<CR>")
 vim.keymap.set("n", "<leader>cl", ":w | make clean SOURCE_FILE=%<CR>")
 
---Novo terminal
-vim.keymap.set("n", "<leader>nn", ":w | !gnome-terminal --window<CR><CR>")
+--terminal
+vim.keymap.set("n", "<leader>nn", ":split term://bash<CR>")
+vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 --simplificando pra mover entre janelas
 vim.keymap.set("n", "<C-h>", "<C-w>h")

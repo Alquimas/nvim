@@ -58,6 +58,6 @@ vim.opt.sidescrolloff = 15
 
 --máximo de 80 caracteres por linha, se ultrapassar automaticamente dá enter no
 --ultimo espaço
-vim.opt.textwidth = 80
+vim.opt.textwidth = 100
 --eu preciso ver onde o texto quebra, nao me julgue
-vim.opt.colorcolumn = "81"
+vim.opt.colorcolumn = "101"
