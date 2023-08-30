@@ -41,3 +41,6 @@ end
 vim.cmd([[command! ToggleRelNum lua Toggle_relative_number()]])
 
 vim.keymap.set("n", "<leader>rn", ":ToggleRelNum<CR>")
+
+--Deleta Buffer 
+vim.keymap.set("n", "<leader><BS>", ":bd<CR>")
