@@ -20,11 +20,21 @@ lsp.set_sign_icons({
 --
 require'lspconfig'.rust_analyzer.setup{}
 require'lspconfig'.clangd.setup{}
-require'lspconfig'.lua_ls.setup{}
+require'lspconfig'.lua_ls.setup{
+    settings = {
+        Lua = {
+            diagnostics = {
+                -- Get the language server to recognize the `vim` global
+                globals = {'vim'},
+            },
+        },
+    },
+}
 require'lspconfig'.hls.setup{}
 require'lspconfig'.ltex.setup{}
 require'lspconfig'.texlab.setup{}
 require'lspconfig'.jdtls.setup{}
+require'lspconfig'.ocamllsp.setup{}
 
 lsp.setup()
 

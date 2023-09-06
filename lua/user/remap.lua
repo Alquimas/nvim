@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>cc", ":w | make compile SOURCE_FILE=%<CR>")
 vim.keymap.set("n", "<leader>cl", ":w | make clean SOURCE_FILE=%<CR>")
 
 --terminal
-vim.keymap.set("n", "<leader>nn", ":split term://bash<CR>")
+vim.keymap.set("n", "<leader>nn", ":split term://bash<CR> | :resize 7")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 --simplificando pra mover entre janelas
@@ -43,4 +43,4 @@ vim.cmd([[command! ToggleRelNum lua Toggle_relative_number()]])
 vim.keymap.set("n", "<leader>rn", ":ToggleRelNum<CR>")
 
 --Deleta Buffer 
-vim.keymap.set("n", "<leader><BS>", ":bd<CR>")
+vim.keymap.set("n", "<leader><BS>", ":bd!<CR>")
