@@ -1,6 +1,7 @@
 vim.opt.termguicolors = true
 require("bufferline").setup{
     options = {
+        truncate_names = true,
         numbers = "ordinal",
         separator_style = "slope",
         offsets = {
@@ -9,24 +10,28 @@ require("bufferline").setup{
                 text = "Arquivos",
                 text_align = "center",
                 separator = true,
+                padding = 1,
             },
             {
                 filetype = "NvimTree",
                 text = "Arquivos",
                 text_align = "center",
                 separator = true,
+                padding = 1,
             },
             {
                 filetype = "undotree",
                 text = "UndoTree",
                 text_align = "center",
                 separator = true,
+                padding = 1,
             },
             {
                 filetype = "diff",
                 text = "Diff",
                 text_align = "center",
                 separator = true,
+                padding = 1,
             }
         },
     }

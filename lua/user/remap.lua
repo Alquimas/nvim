@@ -17,7 +17,7 @@ vim.keymap.set("n", "<leader>cc", ":w | make compile SOURCE_FILE=%<CR>")
 vim.keymap.set("n", "<leader>cl", ":w | make clean SOURCE_FILE=%<CR>")
 
 --terminal
-vim.keymap.set("n", "<leader>nn", ":split term://bash<CR> | :resize 7")
+vim.keymap.set("n", "<leader>nn", ":split term://bash | :resize 7<CR>")
 vim.keymap.set("t", "<Esc>", "<C-\\><C-n>")
 
 --simplificando pra mover entre janelas
@@ -44,3 +44,19 @@ vim.keymap.set("n", "<leader>rn", ":ToggleRelNum<CR>")
 
 --Deleta Buffer 
 vim.keymap.set("n", "<leader><BS>", ":bd!<CR>")
+
+--define o diretório atual como sendo a raiz para o telescope
+function Set_currdir()
+	local curdir = vim.fn.expand("%:p:h")
+	vim.api.nvim_set_current_dir(curdir)
+end
+vim.cmd([[command! ChangeDir lua Set_currdir()]])
+
+vim.keymap.set("n", "<leader>cd", ":ChangeDir<CR>")
+
+-- muda um pouco o funcionamente da cmdline
+vim.opt.cmdwinheight = 1
+vim.opt.cmdheight = 0
+
+vim.keymap.set("c", ":", "q:", {})
+vim.keymap.set("n", ":", "q:i", {})
