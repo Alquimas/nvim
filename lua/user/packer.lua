@@ -69,9 +69,6 @@ return require('packer').startup(function(use)
             {'L3MON4D3/LuaSnip'}, -- Required
             {
                 "https://git.sr.ht/~whynothugo/lsp_lines.nvim",
-                config = function()
-                    require("lsp_lines").setup()
-                end,
             } -- Optional
         }
     }

@@ -36,6 +36,8 @@ require'lspconfig'.texlab.setup{}
 require'lspconfig'.jdtls.setup{}
 require'lspconfig'.ocamllsp.setup{}
 
+vim.keymap.set('n', '<leader>l', vim.diagnostic.open_float)
+
 lsp.setup()
 
 --o cmp que cuida do autocomplete, então qualquer coisa relativa a isso é 

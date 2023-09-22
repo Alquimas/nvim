@@ -56,7 +56,4 @@ vim.keymap.set("n", "<leader>cd", ":ChangeDir<CR>")
 
 -- muda um pouco o funcionamente da cmdline
 vim.opt.cmdwinheight = 1
-vim.opt.cmdheight = 0
-
-vim.keymap.set("c", ":", "q:", {})
-vim.keymap.set("n", ":", "q:i", {})
+vim.opt.cmdheight = 1
