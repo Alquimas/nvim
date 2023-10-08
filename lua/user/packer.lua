@@ -39,7 +39,7 @@ return require('packer').startup(function(use)
         requires = 'nvim-tree/nvim-web-devicons'})
 
     -- destaque na indentação
-    use(  'lukas-reineke/indent-blankline.nvim')
+    use(  'lukas-reineke/indent-blankline.nvim', {main = "ibl", opts = {}})
 
     --barra bonitinha
     use(  'nvim-lualine/lualine.nvim', {requires = 'nvim-tree/nvim-web-devicons',
