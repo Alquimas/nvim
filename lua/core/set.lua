@@ -6,6 +6,8 @@ vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
 local opts = {
+
+    list = true,
 	--ativa o acesso do nvim ao clipboard do sistema
 	clipboard = "unnamedplus",
 
@@ -22,10 +24,10 @@ local opts = {
 	nu = true,
 	relativenumber = true,
 
-	--2 espacos tab, a revolucao
-	tabstop = 2,
-	softtabstop = 2,
-	shiftwidth = 2,
+	--4 espacos tab, a revolucao
+	tabstop = 4,
+	softtabstop = 4,
+	shiftwidth = 4,
 	expandtab = true,
 
 	--sem backup amigo
@@ -50,8 +52,7 @@ local opts = {
 	showmode = false,
 
 	-- guia de identação
-	list = true,
-	listchars = { tab = "⟩ ", precedes = "<", extends = ">", leadmultispace = "▏ ", trail = "␣", nbsp = "⍽" },
+	listchars = { tab = "⟩ ", precedes = "<", extends = ">", trail = "␣", nbsp = "⍽", leadmultispace = "▏   "},
 
 	--sempre mostra as 15 primeiras/ultimas linhas, exceto se for começo/fim do
 	--documento
@@ -66,7 +67,14 @@ local opts = {
 
 	-- muda um pouco o funcionamente da cmdline
 	cmdwinheight = 1,
-	cmdheight = 1,
+    cmdheight = 1,
+
+    -- um folding basico eh melhor que folding nenhum
+    foldmethod = "indent",
+    fillchars = { fold = "~" },
+    foldenable = false,
+    foldlevel = 99,
+
 }
 
 for k, v in pairs(opts) do
