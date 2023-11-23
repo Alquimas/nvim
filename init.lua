@@ -53,4 +53,4 @@ local opts = {
 require("lazy").setup("plugins", opts)
 require("lazy").setup(plugins, opts)
 
-vim.cmd("colorscheme tokyonight-night")
+vim.cmd("colorscheme oxocarbon")
