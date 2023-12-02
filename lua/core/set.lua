@@ -70,7 +70,7 @@ local opts = {
     cmdheight = 1,
 
     -- um folding basico eh melhor que folding nenhum
-    foldmethod = "indent",
+    foldmethod = "manual",
     fillchars = { fold = "×" },
     foldenable = false,
     foldlevel = 99,
