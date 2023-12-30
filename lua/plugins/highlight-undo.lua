@@ -9,8 +9,8 @@ return {
 	    	hlgroup = 'HighlightUndo',
 	    	duration = 2000,
 	    	keymaps = {
-	      		{'n', 'u', 'undo', {}},
-	      		{'n', '<C-r>', 'redo', {}},
+	      		{'n', 'u', 'undo', {desc = "Undo"}},
+	      		{'n', '<C-r>', 'redo', {desc = "Redo"}},
 	    	}
 		}
 

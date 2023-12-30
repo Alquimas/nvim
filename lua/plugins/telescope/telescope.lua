@@ -1,5 +1,7 @@
 local mappings = {
 	{ "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
+    { "<leader>bb", "<cmd>Telescope buffers<cr>", desc = "See Buffers" },
+    { "<leader>oo", "<cmd>Telescope old_files<cr>", desc = "Old Files" },
 }
 
 return {
@@ -9,13 +11,26 @@ return {
 	lazy = false,
 	dependencies = {
 		"nvim-lua/plenary.nvim",
+        {
+			"nvim-telescope/telescope-fzf-native.nvim",
+			build = "make",
+		},
 	},
 
 	config = function()
 		local telescope = require("telescope")
 		local action = require("telescope.actions")
-		telescope.setup({
-			defaults = {
+
+        local opts = {
+            extensions = {
+                fzf = {
+				    fuzzy = true,
+				    override_generic_sorter = true,
+				    override_file_sorter = true,
+				    case_mode = "smart_case",
+                },
+            },
+            defaults = {
         		theme = "center",
         		layout_strategy = 'horizontal',
         		sorting_strategy = "ascending",
@@ -26,7 +41,17 @@ return {
             		},
         		},
     		},
-		})
+        }
+		telescope.setup(opts)
+
+        local ext = {
+            "fzf",
+        }
+
+        -- load extensions
+        for _, extension in ipairs(ext) do
+            telescope.load_extension(extension)
+        end
 	end,
 
 	keys = mappings,

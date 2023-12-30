@@ -3,7 +3,7 @@ return {
 	lazy = false,
 	enabled = config.undotree,
 	config = function()
-		vim.keymap.set('n', '<C- >', vim.cmd.UndotreeToggle)
+		vim.keymap.set('n', '<C- >', vim.cmd.UndotreeToggle, {desc = "Undo Tree"})
 		----------------- Opções
 		vim.g.undotree_WindowLayout = 2
 		vim.g.undotree_RelativeTimestamp = 1
