@@ -5,7 +5,17 @@ return {
     build = ":TSUpdate",
 
     opts = {
-        ensure_installed = { "lua", "c", "vim", "vimdoc", "query", "java", "haskell", "latex", "elixir" },
+        ensure_installed = {
+            "lua",
+            "c",
+            "vim",
+            "vimdoc",
+            "query",
+            "java",
+            "haskell",
+            "latex",
+            "elixir"
+        },
         incremental_selection = {
             enable = true,
             keymaps = {

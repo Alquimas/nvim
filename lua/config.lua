@@ -7,14 +7,14 @@ servers.rust_analyzer = {}
 servers.clangd = {}
 
 servers.lua_ls = {
-	Lua = {
-		diagnostics = {
-			globals = { "vim", "config", "utils", "icons" },
-			disable = {
-				"lowercase-global",
-			},
-		},
-	},
+    Lua = {
+        diagnostics = {
+            globals = { "vim", "config", "utils", "icons" },
+            disable = {
+                "lowercase-global",
+            },
+        },
+    },
 }
 
 servers.hls = {}
@@ -28,7 +28,7 @@ servers.jdtls = {}
 servers.ocamllsp = {}
 
 servers.elixirls = {
-	cmd = { vim.fn.expand("$HOME") .. "/.config/nvim/language_servers/elixir-ls-v0.17.8/language_server.sh" },
+    cmd = { vim.fn.expand("$HOME") .. "/.config/nvim/language_servers/elixir-ls-v0.17.8/language_server.sh" },
 }
 
 M.servers = servers

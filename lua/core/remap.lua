@@ -22,7 +22,10 @@ local normal = {
     ["<c-a-k>"] = { "<cmd>resize +1<cr>", "Aumenta para cima" },
     ["<c-a-l>"] = { "<cmd>vertical resize -1<cr>", "Aumenta para direita" },
     ["<c-a-h>"] = { "<cmd>vertical resize +1<cr>", "Aumenta para esquerda" },
-    ["<leader>s"] = { [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]], "Substituir palavra" },
+    ["<leader>s"] = {
+        [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
+        "Substituir palavra"
+    },
     ["<leader>a"] = { "gg0vG$", "Seleciona todo o texto" },
     ["<a-j>"] = { "<cmd>m .+1<cr>==", "Move a linha para baixo" },
     ["<a-k>"] = { "<cmd>m .-2<cr>==", "Move a linha para cima" },
@@ -30,7 +33,7 @@ local normal = {
     -- buffers
     ["<leader><BS>"] = { "<cmd>bd<cr>", "Deleta buffer" },
     ["<TAB>"] = { "<cmd>bn<cr>", "Próximo buffer" },
-    ["<S-TAB>"] = { "<cmd>bp<cr>", "Buffer anterior" },
+    ["<S-TAB>"] = { "<cmd>b#<cr>", "Buffer anterior" },
 
     -- as chances de eu querer recortar sao mininmas
     ["x"] = '"_x',

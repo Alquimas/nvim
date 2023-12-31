@@ -7,11 +7,11 @@ return {
         local opts = {
             options = {
                 icons_enabled = true,
-                theme = 'auto',
+                theme = 'ayu_mirage',
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
                 disabled_filetypes = {
-                    statusline = {},
+                    statusline = { "neo-tree", "NvimTree", "undotree", "diff" },
                     winbar = {},
                 },
                 ignore_focus = {},
@@ -21,27 +21,61 @@ return {
                     statusline = 1000,
                     tabline = 1000,
                     winbar = 1000,
-                }
+                },
+            },
+            sections = {
+                lualine_a = { 'mode' },
+                lualine_b = { 'branch', 'diff',
+                    {
+                        "diagnostics",
+                        symbols = {
+                            error = '✖ ',
+                            warn = ' ',
+                            hint = ' ',
+                            info = ' ',
+                        },
+                        always_visible = true,
+                        colored = true,
+                        diagnostics_color = {
+                            error = {fg = '#ff0015'},
+                            warn  = {fg = '#ffee00'},
+                            info  = {fg = '#3094ff'},
+                            hint  = {fg = '#00ff11'},
+                        },
+                    },
+                },
+                lualine_c = {},
+                lualine_x = {
+                    {
+                        "filetype",
+                        icon_only = true,
+                        separator = "",
+                        padding = { left = 1, right = 0 }
+                    },
+                    {
+                        "filename",
+                        file_status = true,
+                        path = 1,
+                        symbols = {
+                            modified = '{+}',
+                            readonly = '{-}',
+                            unnamed = '{No Name}',
+                            newfile = '{New}',
+                        }
+                    },
+                    'encoding' },
+                lualine_y = { 'progress' },
+                lualine_z = { 'location' }
+            },
+            inactive_sections = {
+                lualine_a = {},
+                lualine_b = {},
+                lualine_c = { 'filename' },
+                lualine_x = { 'location' },
+                lualine_y = {},
+                lualine_z = {}
             },
         }
-        local sections = {
-            lualine_a = { 'mode' },
-            lualine_b = { 'branch', 'diff', 'diagnostics' },
-            lualine_c = { 'filename' },
-            lualine_x = { 'encoding', 'fileformat', 'filetype' },
-            lualine_y = { 'progress' },
-            lualine_z = { 'location' }
-        }
-        local inactive_sections = {
-            lualine_a = {},
-            lualine_b = {},
-            lualine_c = { 'filename' },
-            lualine_x = { 'location' },
-            lualine_y = {},
-            lualine_z = {}
-        }
-        sections = sections;
-        inactive_sections = inactive_sections;
         lualine.setup(opts)
     end,
 }
