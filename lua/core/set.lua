@@ -52,7 +52,14 @@ local opts = {
     showmode = false,
 
     -- guia de identação
-    listchars = { tab = "⟩ ", precedes = "<", extends = ">", trail = "␣", nbsp = "⍽", leadmultispace = "▏   " },
+    listchars = {
+        tab = "⟩ ",
+        precedes = "<",
+        extends = ">",
+        trail = "␣",
+        nbsp = "⍽",
+        leadmultispace = "▏   "
+    },
 
     --sempre mostra as 15 primeiras/ultimas linhas, exceto se for começo/fim do
     --documento
@@ -62,6 +69,7 @@ local opts = {
     --máximo de 80 caracteres por linha, se ultrapassar automaticamente dá enter no
     --ultimo espaço
     textwidth = 80,
+
     --eu preciso ver onde o texto quebra, nao me julgue
     colorcolumn = "81",
 
@@ -71,7 +79,9 @@ local opts = {
 
     -- um folding basico eh melhor que folding nenhum
     foldmethod = "manual",
-    fillchars = { fold = "×" },
+    fillchars = {
+        fold = "×"
+    },
     foldenable = false,
     foldlevel = 99,
 
