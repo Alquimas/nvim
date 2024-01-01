@@ -1,18 +1,6 @@
-local mappings = {
-    { "<leader>ff", "<cmd>Telescope find_files<cr>", desc = "Find Files" },
-    { "<leader>gg", "<cmd>Telescope git_files<cr>",  desc = "Git Files" },
-    { "<leader>bb", "<cmd>Telescope buffers<cr>",    desc = "See Buffers" },
-    { "<leader>oo", "<cmd>Telescope oldfiles<cr>",   desc = "Old Files" },
-    {
-        "<leader>cc",
-        "<cmd>Telescope current_buffer_fuzzy_find<cr>",
-        desc = "Find in file"
-    },
-}
-
 return {
     "nvim-telescope/telescope.nvim",
-    tag = '0.1.2',
+    tag = '0.1.5',
     enabled = config.telescope,
     lazy = false,
     dependencies = {
@@ -25,7 +13,6 @@ return {
 
     config = function()
         local telescope = require("telescope")
-        local action = require("telescope.actions")
 
         local opts = {
             extensions = {
@@ -37,14 +24,26 @@ return {
                 },
             },
             defaults = {
-                theme = "center",
+                previewer = false,
                 layout_strategy = 'horizontal',
-                sorting_strategy = "ascending",
+                sorting_strategy = 'ascending',
                 layout_config = {
                     horizontal = {
-                        prompt_position = "top",
-                        preview_width = 0.0,
+                        anchor = 'center',
+                        height = 0.9,
+                        preview_cutoff = 120,
+                        preview_width = 0,
+                        prompt_position = 'bottom',
+                        width = 0.8,
                     },
+                },
+                prompt_prefix = ' ',
+                selection_caret = ' ',
+                border = true,
+                borderchars = {
+                    prompt = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
+                    results = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
+                    preview = { '▀', '▐', '▄', '▌', '▛', '▜', '▟', '▙' },
                 },
             },
         }
@@ -60,5 +59,19 @@ return {
         end
     end,
 
-    keys = mappings,
+    keys = {
+        {
+            "<leader>ff",
+            "<cmd>Telescope find_files<cr>",
+            desc = "Find Files"
+        },
+        { "<leader>gg", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
+        { "<leader>bb", "<cmd>Telescope buffers<cr>",   desc = "See Buffers" },
+        { "<leader>oo", "<cmd>Telescope oldfiles<cr>",  desc = "Old Files" },
+        {
+            "<leader>cc",
+            "<cmd>Telescope current_buffer_fuzzy_find<cr>",
+            desc = "Find in file"
+        },
+    },
 }

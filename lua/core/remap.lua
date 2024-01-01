@@ -41,7 +41,8 @@ local normal = {
 
 local insert = {
     ["jk"] = "<esc>",
-    ["<c-s>"] = "<esc>:w<cr>",
+    ["kj"] = "<esc>",
+    ["<c-s>"] = "<esc>:w<cr>i",
     ["<a-j>"] = "<esc>:m .+1<cr>==gi",
     ["<a-k>"] = "<esc>:m .-2<cr>==gi",
 }

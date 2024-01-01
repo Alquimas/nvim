@@ -16,7 +16,7 @@ return {
                 },
                 ignore_focus = {},
                 always_divide_middle = true,
-                globalstatus = false,
+                globalstatus = true,
                 refresh = {
                     statusline = 1000,
                     tabline = 1000,
@@ -37,10 +37,10 @@ return {
                         always_visible = true,
                         colored = true,
                         diagnostics_color = {
-                            error = {fg = '#ff0015'},
-                            warn  = {fg = '#ffee00'},
-                            info  = {fg = '#3094ff'},
-                            hint  = {fg = '#00ff11'},
+                            error = 'DiagnosticError',
+                            warn  = 'DiagnosticWarn',
+                            info  = 'DiagnosticInfo',
+                            hint  = 'DiagnosticHint',
                         },
                     },
                 },
@@ -63,7 +63,7 @@ return {
                             newfile = '{New}',
                         }
                     },
-                    'encoding' },
+                },
                 lualine_y = { 'progress' },
                 lualine_z = { 'location' }
             },
