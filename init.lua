@@ -44,9 +44,8 @@ local opts = {
         lazy = true,
     },
     install = {
-        colorscheme = { -- Will try to load the themes if available in this order
+        colorscheme = {
             "oxocarbon",
-            "tokyodark",
         },
     },
 }

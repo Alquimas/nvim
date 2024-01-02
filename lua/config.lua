@@ -28,7 +28,8 @@ servers.jdtls = {}
 servers.ocamllsp = {}
 
 servers.elixirls = {
-    cmd = { vim.fn.expand("$HOME") .. "/.config/nvim/language_servers/elixir-ls-v0.17.8/language_server.sh" },
+    cmd = { vim.fn.expand("$HOME") ..
+    "/.config/nvim/language_servers/elixir-ls-v0.17.8/language_server.sh" },
 }
 
 M.servers = servers

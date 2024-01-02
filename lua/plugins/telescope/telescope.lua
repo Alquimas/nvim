@@ -65,9 +65,21 @@ return {
             "<cmd>Telescope find_files<cr>",
             desc = "Find Files"
         },
-        { "<leader>gg", "<cmd>Telescope git_files<cr>", desc = "Git Files" },
-        { "<leader>bb", "<cmd>Telescope buffers<cr>",   desc = "See Buffers" },
-        { "<leader>oo", "<cmd>Telescope oldfiles<cr>",  desc = "Old Files" },
+        {
+            "<leader>gg",
+            "<cmd>Telescope git_files<cr>",
+            desc = "Git Files"
+        },
+        {
+            "<leader>bb",
+            "<cmd>Telescope buffers<cr>",
+            desc = "See Buffers"
+        },
+        {
+            "<leader>oo",
+            "<cmd>Telescope oldfiles<cr>",
+            desc = "Old Files"
+        },
         {
             "<leader>cc",
             "<cmd>Telescope current_buffer_fuzzy_find<cr>",
