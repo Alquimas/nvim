@@ -26,7 +26,7 @@ local normal = {
         [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
         "Substituir palavra"
     },
-    ["<leader>a"] = { "gg0vG$", "Seleciona todo o texto" },
+    ["<leader>a"] = { "mpgg0vG$y`p", "Copia todo o texto" },
     ["<a-j>"] = { "<cmd>m .+1<cr>==", "Move a linha para baixo" },
     ["<a-k>"] = { "<cmd>m .-2<cr>==", "Move a linha para cima" },
 
@@ -37,6 +37,12 @@ local normal = {
 
     -- as chances de eu querer recortar sao mininmas
     ["x"] = '"_x',
+
+    -- splits (sim, esses são os comandos padrao, so quero memorizar)
+    ["<C-w>v"] = { "<cmd>vsplit<cr>", "Split vertical" },
+    ["<C-w>s"] = { "<cmd>split<cr>", "Split horizontal" },
+    ["<C-w>w"] = { "<C-w>w", "Next split" },
+    ["<C-w>p"] = { "<C-w>p", "Previous split" },
 }
 
 local insert = {
