@@ -74,7 +74,7 @@ return {
                     },
                     ['gs'] = {
                         '<cmd>lua vim.lsp.buf.signature_help()<cr>',
-                        "Ir para assinatura",
+                        "Ver assinatura",
                         opts
                     },
                     ['<F2>'] = {
@@ -108,8 +108,15 @@ return {
                         opts
                     },
                 }
-
+                local insert = {
+                    ['gs'] = {
+                        '<cmd>lua vim.lsp.buf.signature_help()<cr>',
+                        "Ver assinatura",
+                        opts
+                    },
+                }
                 map("n", normal)
+                map("i", insert)
             end
         })
 

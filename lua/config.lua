@@ -19,7 +19,9 @@ servers.lua_ls = {
 
 servers.hls = {}
 
-servers.ltex = {}
+--[[servers.ltex = {
+    language = { "en-US", "pt-BR" },
+}]]--
 
 servers.texlab = {}
 
@@ -31,6 +33,8 @@ servers.elixirls = {
     cmd = { vim.fn.expand("$HOME") ..
     "/.config/nvim/language_servers/elixir-ls-v0.17.8/language_server.sh" },
 }
+
+servers.zls = {}
 
 M.servers = servers
 
