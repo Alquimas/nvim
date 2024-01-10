@@ -43,6 +43,9 @@ local normal = {
     ["<C-w>s"] = { "<cmd>split<cr>", "Split horizontal" },
     ["<C-w>w"] = { "<C-w>w", "Next split" },
     ["<C-w>p"] = { "<C-w>p", "Previous split" },
+
+    -- copiar para o clipboard do computador
+    ["leader>y"] = { [["+y]], "Copy to plus register" },
 }
 
 local insert = {
@@ -51,6 +54,7 @@ local insert = {
     ["<c-s>"] = "<esc>:w<cr>i",
     ["<a-j>"] = "<esc>:m .+1<cr>==gi",
     ["<a-k>"] = "<esc>:m .-2<cr>==gi",
+    ["/*"] = "/**/<left><left>"
 }
 
 local visual = {

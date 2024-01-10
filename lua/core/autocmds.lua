@@ -18,3 +18,14 @@ autocmd({"BufWritePre"}, {
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
+
+local restorecursor = vim.api.nvim_create_augroup("RestoreCursor", {})
+autocmd("BufReadPost", {
+    group = restorecursor,
+    desc = "Restore last cursor position in file",
+    callback = function()
+        if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+            vim.fn.setpos(".", vim.fn.getpos("'\""))
+        end
+    end,
+})

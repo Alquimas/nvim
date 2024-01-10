@@ -66,7 +66,7 @@ local opts = {
     scrolloff = 15,
     sidescrolloff = 15,
 
-    --máximo de 80 caracteres por linha, se ultrapassar automaticamente dá 
+    --máximo de 80 caracteres por linha, se ultrapassar automaticamente dá
     --enter no ultimo espaço
     textwidth = 80,
 
