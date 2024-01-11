@@ -34,6 +34,18 @@ local normal = {
     ["<leader><BS>"] = { "<cmd>bd<cr>", "Deleta buffer" },
     ["<TAB>"] = { "<cmd>bn<cr>", "Próximo buffer" },
     ["<S-TAB>"] = { "<cmd>b#<cr>", "Buffer anterior" },
+    ["<leader><TAB><BS>"] = {
+        function()
+            for _, buf in ipairs(vim.api.nvim_list_bufs()) do
+                if vim.api.nvim_get_option_value("buflisted", { buf = buf })
+                    and not vim.api.nvim_get_option_value("modified", { buf = buf })
+                    and buf ~= vim.api.nvim_get_current_buf() then
+                    vim.api.nvim_buf_delete(buf, {})
+                end
+            end
+        end,
+        "Deleta todos os buffers exceto o atual"
+    },
 
     -- as chances de eu querer recortar sao mininmas
     ["x"] = '"_x',
@@ -46,6 +58,7 @@ local normal = {
 
     -- copiar para o clipboard do computador
     ["leader>y"] = { [["+y]], "Copy to plus register" },
+
 }
 
 local insert = {

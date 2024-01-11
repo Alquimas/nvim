@@ -30,7 +30,6 @@ vim.g.filetype = on
 
 local opts = {
     ui = {
-        ---@diagnostic disable-next-line: undefined-global
         border = "rounded",
         icons = {
             ft = "",

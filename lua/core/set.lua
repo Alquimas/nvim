@@ -8,6 +8,7 @@ vim.g.loaded_netrwPlugin = 1
 local opts = {
 
     list = true,
+    title = true,
     --ativa o acesso do nvim ao clipboard do sistema
     clipboard = "unnamedplus",
 
@@ -36,6 +37,7 @@ local opts = {
 
     --indentação inteligente
     smartindent = true,
+    copyindent = true,
 
     --cria um arquivo de undo, para deixar a undo tree mais op
     undodir = os.getenv("HOME") .. "/.vim/undodir",
@@ -58,7 +60,8 @@ local opts = {
         extends = ">",
         trail = "␣",
         nbsp = "⍽",
-        leadmultispace = "▏   "
+        leadmultispace = "▏   ",
+        space = "·",
     },
 
     --sempre mostra as 15 primeiras/ultimas linhas, exceto se for começo/fim do
@@ -80,10 +83,13 @@ local opts = {
     -- um folding basico eh melhor que folding nenhum
     foldmethod = "manual",
     fillchars = {
-        fold = "×"
+        fold = " "
     },
     foldenable = false,
     foldlevel = 99,
+
+    -- caracteres especiais ativados no regexp
+    magic = true,
 
 }
 
