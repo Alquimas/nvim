@@ -7,7 +7,7 @@ function GetStatusColumnFmt()
         local hl = vim.fn.line(".") == vim.v.lnum and "CursorLineFold" or "FoldColumn"
         if vim.v.virtnum == 0 and vim.fn.foldlevel(vim.v.lnum)
             and vim.fn.foldlevel(vim.v.lnum) > vim.fn.foldlevel(vim.v.lnum - 1) then
-            foldchar = vim.fn.foldclosed(vim.v.lnum) == -1 and "⌵" or "›"
+            foldchar = vim.fn.foldclosed(vim.v.lnum) == -1 and "" or ""
         end
         foldchar = string.format("%%#%s#%s%%*", hl, foldchar)
         table.insert(components, foldchar)
