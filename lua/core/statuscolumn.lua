@@ -24,7 +24,7 @@ function GetStatusColumnFmt()
                 linenr = vim.v.relnum ~= 0 and vim.v.relnum or vim.v.lnum
             end
         end
-        linenr = "%=" .. linenr
+        linenr = " " .. "%=" .. linenr
         table.insert(components, linenr)
     end
 

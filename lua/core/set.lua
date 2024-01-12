@@ -81,7 +81,7 @@ local opts = {
     cmdheight = 1,
 
     -- um folding basico eh melhor que folding nenhum
-    foldmethod = "manual",
+    foldmethod = "indent",
     fillchars = {
         fold = " "
     },
