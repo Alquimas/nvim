@@ -1,10 +1,6 @@
 --muda o caracter do <leader> para espaço
 vim.g.mapleader = " "
 
---desativa a tree nativa do Vim, que pode ser chamada usando :Ex
-vim.g.loaded_netrw = 1
-vim.g.loaded_netrwPlugin = 1
-
 local opts = {
 
     list = true,

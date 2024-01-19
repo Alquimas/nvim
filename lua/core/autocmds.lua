@@ -13,7 +13,7 @@ autocmd("TextYankPost", {
 
 -- Ao salvar um arquivo, deleta qualquer espaço sobrando
 local remove_trailing_space = augroup("TrailingSpace", {})
-autocmd({"BufWritePre"}, {
+autocmd({ "BufWritePre" }, {
     group = remove_trailing_space,
     pattern = "*",
     command = [[%s/\s\+$//e]],
@@ -25,29 +25,40 @@ autocmd("BufReadPost", {
     group = restorecursor,
     desc = "Restore last cursor position in file",
     callback = function()
-        if vim.fn.line("'\"") > 0 and vim.fn.line("'\"") <= vim.fn.line("$") then
+        if vim.fn.line("'\"") > 0 and
+            vim.fn.line("'\"") <= vim.fn.line("$") then
             vim.fn.setpos(".", vim.fn.getpos("'\""))
         end
     end,
 })
 
 -- ao entrar no modo de insercao, desabilita o relativenumber
-local togglegroup = augroup("NumberToggle", {clear = true})
-autocmd({"BufEnter", "FocusGained", "InsertLeave" }, {
+local togglegroup = augroup("NumberToggle", { clear = true })
+autocmd({ "BufEnter", "FocusGained", "InsertLeave" }, {
     group = togglegroup,
     desc = "When enter insert mode, disables relativenumber",
     pattern = "*",
-    callback = function ()
+    callback = function()
         vim.wo.relativenumber = true
     end,
 })
 
-autocmd({"BufLeave", "FocusLost", "InsertEnter" }, {
+autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
     group = togglegroup,
     desc = "When leaves insert mode, enables relativenumber",
     pattern = "*",
-    callback = function ()
+    callback = function()
         vim.wo.relativenumber = false
+    end,
+})
+
+local startup = augroup("Startup", {})
+autocmd({ "VimEnter" }, {
+    group = startup,
+    desc = "When entering vim, open nvimtree",
+    pattern = "*",
+    callback = function ()
+        require("nvim-tree.api").tree.open()
     end,
 })
 

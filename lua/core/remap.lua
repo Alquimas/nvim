@@ -36,9 +36,10 @@ local normal = {
     ["<S-TAB>"] = { "<cmd>b#<cr>", "Buffer anterior" },
     ["<leader><TAB><BS>"] = {
         function()
+            local get_value = vim.api.nvim_get_option_value
             for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-                if vim.api.nvim_get_option_value("buflisted", { buf = buf })
-                    and not vim.api.nvim_get_option_value("modified", { buf = buf })
+                if get_value("buflisted", { buf = buf })
+                    and not get_value("modified",{buf = buf})
                     and buf ~= vim.api.nvim_get_current_buf() then
                     vim.api.nvim_buf_delete(buf, {})
                 end

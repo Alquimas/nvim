@@ -14,7 +14,8 @@ return {
             "java",
             "haskell",
             "latex",
-            "elixir"
+            "elixir",
+            "nasm"
         },
         incremental_selection = {
             enable = true,

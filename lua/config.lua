@@ -21,7 +21,8 @@ servers.hls = {}
 
 --[[servers.ltex = {
     language = { "en-US", "pt-BR" },
-}]]--
+}]]
+--
 
 servers.texlab = {}
 
@@ -35,6 +36,14 @@ servers.elixirls = {
 }
 
 servers.zls = {}
+
+servers.asm_lsp = {
+    cmd = { "asm-lsp" },
+    root_dir =
+        function(fname)
+            return vim.fn.getcwd()
+        end,
+}
 
 M.servers = servers
 

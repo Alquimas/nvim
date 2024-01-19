@@ -118,6 +118,6 @@ return {
         nvtree.setup(opts)
     end, -- }}}
     keys = {
-        { "<leader>x", "<cmd>NvimTreeToggle<cr>", desc = "File Explorer" },
+        { "<leader>x", "<cmd>NvimTreeToggle<cr>", desc = "Nvim Tree" },
     },
 }
