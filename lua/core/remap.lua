@@ -18,10 +18,10 @@ local normal = {
 
     ["<leader>cd"] = { utils.set_curdir, "Muda o diretório" },
 
-    ["<c-a-j>"] = { "<cmd>resize -1<cr>", "Aumenta para baixo" },
-    ["<c-a-k>"] = { "<cmd>resize +1<cr>", "Aumenta para cima" },
-    ["<c-a-l>"] = { "<cmd>vertical resize -1<cr>", "Aumenta para direita" },
-    ["<c-a-h>"] = { "<cmd>vertical resize +1<cr>", "Aumenta para esquerda" },
+    ["<c-a-j>"] = { "<cmd>resize -3<cr>", "Aumenta para baixo" },
+    ["<c-a-k>"] = { "<cmd>resize +3<cr>", "Aumenta para cima" },
+    ["<c-a-l>"] = { "<cmd>vertical resize -3<cr>", "Aumenta para direita" },
+    ["<c-a-h>"] = { "<cmd>vertical resize +3<cr>", "Aumenta para esquerda" },
     ["<leader>s"] = {
         [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gc<Left><Left><Left>]],
         "Substituir palavra"
@@ -59,7 +59,6 @@ local normal = {
 
     -- copiar para o clipboard do computador
     ["leader>y"] = { [["+y]], "Copy to plus register" },
-
 }
 
 local insert = {

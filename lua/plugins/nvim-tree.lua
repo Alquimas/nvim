@@ -62,7 +62,14 @@ return {
                 enable = true,
                 update_root = true,
             },
+            view = {
+                number = false,
+                relativenumber = false,
+                signcolumn = "no",
+                width = 30,
+            },
             renderer = {
+                root_folder_label = ":~:s?$?/..?",
                 --identação dos arquivos
                 indent_markers = {
                     enable = true,
