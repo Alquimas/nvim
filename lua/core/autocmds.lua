@@ -45,3 +45,20 @@ autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
         vim.wo.relativenumber = false
     end,
 })
+
+-- shift numbered registers up (1 becomes 2, etc.)
+local function yank_shift()
+    for i = 9, 1, -1 do
+        vim.fn.setreg(tostring(i), vim.fn.getreg(tostring(i - 1)))
+    end
+end
+
+-- create autocmd for TextYankPost event
+vim.api.nvim_create_autocmd("TextYankPost", {
+    callback = function()
+        local event = vim.v.event
+        if event.operator == "y" then
+            yank_shift()
+        end
+    end,
+})

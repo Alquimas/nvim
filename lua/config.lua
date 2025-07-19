@@ -23,7 +23,9 @@ servers.lua_ls = {
     },
 }
 
-servers.hls = {}
+servers.hls = {
+    cmd = { "haskell-language-server-wrapper", "--lsp" }
+}
 
 servers.texlab = {}
 
@@ -44,6 +46,10 @@ servers.asm_lsp = {
 servers.fortls = {}
 
 servers.serve_d = {}
+
+servers.gopls = {}
+
+servers.metals = {}
 
 M.servers = servers
 
