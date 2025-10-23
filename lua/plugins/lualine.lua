@@ -1,8 +1,8 @@
 return {
-    "nvim-lualine/lualine.nvim",
+    'nvim-lualine/lualine.nvim',
     lazy = false,
     config = function()
-        local lualine = require("lualine")
+        local lualine = require('lualine')
 
         local opts = {
             options = {
@@ -11,7 +11,7 @@ return {
                 component_separators = { left = '', right = '' },
                 section_separators = { left = '', right = '' },
                 disabled_filetypes = {
-                    statusline = { "neo-tree", "NvimTree", "undotree", "diff", "oil" },
+                    statusline = { 'neo-tree', 'NvimTree', 'undotree', 'diff', 'oil' },
                     winbar = {},
                 },
                 ignore_focus = {},
