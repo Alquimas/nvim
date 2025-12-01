@@ -14,7 +14,7 @@ if not vim.loop.fs_stat(lazypath) then
         "clone",
         "--filter=blob:none",
         "https://github.com/folke/lazy.nvim.git",
-        "--branch=stable", -- latest stable release
+        "--branch=stable",
         lazypath,
     })
 end
@@ -36,14 +36,10 @@ local opts = {
     change_detection = { enabled = false },
     defaults = {
         lazy = true,
-    },
-    install = {
-        colorscheme = {
-            "catppuccin/nvim",
-        },
-    },
+    }
 }
 
 require("lazy").setup("plugins", opts)
 
-vim.cmd("colorscheme catppuccin-mocha")
+vim.opt.background = "dark"
+vim.cmd.colorscheme("nordbones")

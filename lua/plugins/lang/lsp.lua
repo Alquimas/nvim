@@ -2,9 +2,6 @@ return {
     "neovim/nvim-lspconfig",
     enabled = config.nvim_lspconfig,
     lazy = false,
-    dependencies = {
-        "williamboman/mason-lspconfig.nvim",
-    },
 
     config = function()
         local signs = {
@@ -26,16 +23,13 @@ return {
             severity_sort = true,
             float = {
                 border = "rounded",
-                source = "always",
+                source = true,
                 focusable = false,
             },
             inlay_hints = {
                 enabled = true,
             },
         })
-
---local lspconfig = require('lspconfig')
---local lsp_capabilities = require('cmp_nvim_lsp').default_capabilities()
 
         vim.api.nvim_create_autocmd('LspAttach', {
             desc = 'LSP actions',
@@ -131,12 +125,6 @@ return {
                 map("n", normal)
             end
         })
-
-        for k, v in pairs(config.servers) do
-            assert(loadstring('return ' ..
-                string.format("require('lspconfig').%s.setup", k) ..
-                '(...)'))(v)
-        end
 
         local wk = require("which-key")
         wk.add({
